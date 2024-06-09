@@ -10,12 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
-public class TrainingServiceImpl implements TrainingProvider, TrainingService {
-    private final UserRepository userRepository;
-    private final TrainingRepository trainingRepository;
-    private final TrainingMapper trainingMapper;
+public class TrainingServiceImpl implements TrainingProvider, TrainingService{
+    private final UserRepository userRepository = null;
+    private final TrainingRepository trainingRepository = null;
+    private final TrainingMapper trainingMapper = new TrainingMapper();
 
     @Override
     public Optional<TrainingResponseDto> getTraining(final Long trainingId) {

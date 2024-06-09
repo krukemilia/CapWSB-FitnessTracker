@@ -1,5 +1,6 @@
 package com.capgemini.wsb.fitnesstracker.loader;
 
+import com.capgemini.wsb.fitnesstracker.statistics.api.Statistics;
 import com.capgemini.wsb.fitnesstracker.training.api.Training;
 import com.capgemini.wsb.fitnesstracker.training.internal.ActivityType;
 import com.capgemini.wsb.fitnesstracker.user.api.User;
@@ -162,6 +163,26 @@ class InitialDataLoader {
 
         return trainingData;
     }
+
+    private List<Statistics> generateStatistics(List<User> users) {
+        List<Statistics> statisticsData = new ArrayList<>();
+        Statistics statistics1 = new Statistics(users.get(0), 10, 12.3, 1024);
+        Statistics statistics2 = new Statistics(users.get(1), 1, 3.0, 300);
+        Statistics statistics3 = new Statistics(users.get(2), 2, 4, 594);
+        Statistics statistics4 = new Statistics(users.get(3), 5, 6.7, 1345);
+        Statistics statistics5 = new Statistics(users.get(4), 14, 75.0, 453453);
+
+        statisticsData.add(statistics1);
+        statisticsData.add(statistics2);
+        statisticsData.add(statistics3);
+        statisticsData.add(statistics4);
+        statisticsData.add(statistics5);
+
+        statisticsData.forEach(statistic -> statisticsRepository.save(statistic));
+
+        return statisticsData;
+    }
+
     private void verifyDependenciesAutowired() {
         if (isNull(userRepository)) {
             throw new IllegalStateException("Initial data loader was not autowired correctly " + this);
