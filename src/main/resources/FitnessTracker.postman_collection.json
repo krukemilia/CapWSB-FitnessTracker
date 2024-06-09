@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "9c0aec07-edd4-4bc4-8a9a-6765d064e2fa",
+		"name": "FitnessTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Training",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 5,\n    \"startTime\": \"2024-04-01T11:00:00\",\n    \"endTime\": \"2024-04-01T11:00:00\",\n    \"activityType\": \"RUNNING\",\n    \"distance\": 10.52,\n    \"averageSpeed\": 8.2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create statistics",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 5,\n    \"totalTrainings\": 3,\n    \"totalDistance\": 8.2,\n    \"totalCaloriesBurned\": 1245\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/statistics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
