@@ -36,4 +36,4 @@ public class StatisticsServiceImpl implements StatisticsProvider, StatisticsServ
         throw new RuntimeException("User not found, can't save statistics.");
     }
 }
-}
+

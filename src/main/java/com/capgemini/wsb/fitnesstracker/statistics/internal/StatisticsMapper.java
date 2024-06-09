@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StatisticsMapper {
-
     StatisticsResponseDto toDto(Statistics statistics) {
         User user = statistics.getUser();
         UserSimpleDataDto simpleDataDto = new UserSimpleDataDto(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
